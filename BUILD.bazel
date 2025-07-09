@@ -1,0 +1,18 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_library(
+    name = "strong_typedefs",
+    hdrs = ["strong_typedefs.h"],
+    visibility = ["//visibility:public"],
+    deps = [],
+)
+
+cc_test(
+    name = "strong_typedefs_test",
+    srcs = ["strong_typedefs_test.cc"],
+    deps = [
+        ":strong_typedefs",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
