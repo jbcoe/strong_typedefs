@@ -1,5 +1,9 @@
 # Strong Typedefs
 
+[![Tests](https://github.com/jbcoe/strong_typedefs/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jbcoe/strong_typedefs/actions/workflows/test.yml)
+[![Pre-commit](https://github.com/jbcoe/strong_typedefs/actions/workflows/pre-commit.yml/badge.svg?branch=main)](https://github.com/jbcoe/strong_typedefs/actions/workflows/pre-commit.yml)
+[![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
+
 A minimal C++20 header-only library for creating type-safe wrappers around
 primitive types.
 
