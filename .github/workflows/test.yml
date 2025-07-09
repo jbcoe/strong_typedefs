@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  bazel-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,5 +15,18 @@ jobs:
       - name: Install Bazel
         uses: bazelbuild/setup-bazelisk@v3
 
-      - name: Run tests
+      - name: Run Bazel tests
         run: bazel test //...
+
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Run tests with pytest via uvx
+        run: uvx pytest bazel_to_cmake_test.py -v
