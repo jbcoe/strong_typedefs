@@ -50,6 +50,9 @@ compile_commands.json
 .clangd/
 .cache/
 
+# Pre-commit
+.pre-commit-cache/
+
 # Python (for build scripts)
 __pycache__/
 *.py[cod]

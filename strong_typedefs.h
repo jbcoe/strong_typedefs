@@ -42,10 +42,13 @@ class StrongTypedef {
  private:
   T value_;
 };
+}  // namespace xyz
 
+#ifdef XYZ_DEFINE_STRONG_TYPEDEF
+#error "XYZ_DEFINE_STRONG_TYPEDEF is already defined."
+#endif  // XYZ_DEFINE_STRONG_TYPEDEF
 #define XYZ_DEFINE_STRONG_TYPEDEF(name, type) \
   struct name##Tag {};                        \
   using name = StrongTypedef<name##Tag, type>;
 
-}  // namespace xyz
 #endif  // XYZ_STRONG_TYPEDEFS_H

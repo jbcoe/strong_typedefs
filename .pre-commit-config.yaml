@@ -1,0 +1,29 @@
+repos:
+  # Basic checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+
+  # C++ formatting with clang-format
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v16.0.6
+    hooks:
+      - id: clang-format
+        args: [--style=file]
+        files: \.(cpp|cc|cxx|c|hpp|h|hxx)$
+
+  # Custom Bazel test hook
+  - repo: local
+    hooks:
+      - id: bazel-test
+        name: Run Bazel Tests
+        entry: bazel test //...
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
