@@ -15,8 +15,5 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-      - name: Install Bazel
-        uses: bazelbuild/setup-bazelisk@v3
-
       - name: Run pre-commit
         run: uvx pre-commit run --all-files

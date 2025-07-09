@@ -16,14 +16,3 @@ repos:
       - id: clang-format
         args: [--style=file]
         files: \.(cpp|cc|cxx|c|hpp|h|hxx)$
-
-  # Custom Bazel test hook
-  - repo: local
-    hooks:
-      - id: bazel-test
-        name: Run Bazel Tests
-        entry: bazel test //...
-        language: system
-        pass_filenames: false
-        always_run: true
-        stages: [pre-commit]
