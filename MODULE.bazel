@@ -1,3 +1,4 @@
+"""https://github.com/jbcoe/strong_typedefs"""
 module(
     name = "xyz_strong_typedefs",
     version = "head",
@@ -10,6 +11,7 @@ bazel_dep(
     version = "1.15.2",
     repo_name = "com_google_googletest",
 )
+
 bazel_dep(
     name = "rules_cc",
     version = "0.1.1",

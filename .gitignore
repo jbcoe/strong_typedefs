@@ -13,7 +13,6 @@ bazel-*
 # Compiler and IDE files
 *.gch
 *.pch
-.vscode/
 .idea/
 *.swp
 *.swo
